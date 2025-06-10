@@ -56,9 +56,9 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://github.com/niveck" target="_blank">Niv Eckhaus</a><sup>*</sup>,</span>
+                <a href="https://github.com/niveck" target="_blank">Niv Eckhaus</a>,</span>
                 <span class="author-block">
-                  <a href="https://uriberger.github.io/" target="_blank">Uri Berger</a><sup>*</sup>,</span>
+                  <a href="https://uriberger.github.io/" target="_blank">Uri Berger</a>,</span>
                   <span class="author-block">
                     <a href="https://gabrielstanovsky.github.io/" target="_blank">Gabriel Stanovsky</a>
                   </span>
@@ -219,6 +219,37 @@
 <!--  </div>-->
 <!--</section>-->
 <!--&lt;!&ndash; End youtube video &ndash;&gt;-->
+
+  <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">The game of Mafia</h2>
+      <div class="columns is-centered">
+        <div class="column is-two-thirds">
+          <div class="publication-text">
+            <p>
+              We choose to set our evaluation of asynchrony modeling for LLMs in a game setting.
+            </p>
+            <p>
+              Games give each participant an objective. Winning the game is a proxy metric of whether the communication was successful. It sets the conversation under a frame of rules, where each participant needs to use the communication to advance to their target.
+            </p>
+            <p>
+              We choose <em>Mafia</em>, a social deduction game in which each player is secretly assigned a role, either <em>mafia</em> or <em>bystander</em>. Only mafia players are aware of all players' roles. Every round starts with a daytime phase, where all players discuss who they think the mafia players might be, and vote out one player. Then the game moves to a nighttime phase, where only mafia players interact and vote to decide which bystander they want to eliminate. In the next round's daytime, the mafia's victim is revealed. The game continues until one of the teams achieves their objective: the mafia's goal is to outnumber the bystanders, and the bystanders' goal is to vote out all mafia.
+            </p>
+            <p>
+              We choose the game of Mafia for evaluating our several reasons. First, it can be based solely on textual interaction, which allows LLMs to play together with human players. Second, it requires collaboration under uncertainty, making communication between participants a fundamental aspect of the game. Third, it centers around suspicion of other players, so both extreme strategies of constantly speaking or not speaking at all can be seen as suspicious. Therefore, the timing of communication is crucial for the player's success.
+            </p>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="publication-image has-text-centered">
+            <img src="static/images/game_rules.png" alt="Mafia rules">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!--&lt;!&ndash; Video carousel &ndash;&gt;-->

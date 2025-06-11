@@ -228,16 +228,19 @@
       <div class="columns is-centered">
         <div class="column is-two-thirds">
           <div class="publication-text">
-            <p>We choose to set our evaluation of asynchrony modeling for LLMs in a game setting.
+            <p>Due to the challenges of evaluation of asynchrony modeling, we choose to set it in a game setting.
+
 
             </p>
             <p>Games give each participant an objective. Winning the game is a proxy metric of whether the communication was successful. It sets the conversation under a frame of rules, where each participant needs to use the communication to advance to their target.
 
-            </p>
-            <p>We choose <em>Mafia</em>, a social deduction game in which each player is secretly assigned a role, either <em>mafia</em> or <em>bystander</em>. Only mafia players are aware of all players' roles. Every round starts with a daytime phase, where all players discuss who they think the mafia players might be, and vote out one player. Then the game moves to a nighttime phase, where only mafia players interact and vote to decide which bystander they want to eliminate. In the next round's daytime, the mafia's victim is revealed. The game continues until one of the teams achieves their objective: the mafia's goal is to outnumber the bystanders, and the bystanders' goal is to vote out all mafia.
 
             </p>
-            <p>We choose the game of Mafia for evaluating our several reasons. First, it can be based solely on textual interaction, which allows LLMs to play together with human players. Second, it requires collaboration under uncertainty, making communication between participants a fundamental aspect of the game. Third, it centers around suspicion of other players, so both extreme strategies of constantly speaking or not speaking at all can be seen as suspicious. Therefore, the timing of communication is crucial for the player's success.
+            <p>We choose the social deduction game <b>Mafia</b>, where participants are assigned secret roles (either <em>mafia</em> or <em>bystander</em>), and need to collaborate under uncertainty and deception to vote out player from the opposite team.
+
+
+            </p>
+            <p>We choose the game of Mafia since, it can be based solely on textual interaction, which allows LLMs to play together with human players; it requires cooperating amid ambiguity, making the communication a fundamental aspect of the game; and it centers around suspicion of other players, so timing of communication can crucial for the player to avoid suspicion.
 
             </p>
           </div>

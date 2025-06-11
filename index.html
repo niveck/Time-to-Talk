@@ -158,6 +158,40 @@
 <!-- End paper abstract -->
 
 
+
+  <section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Asynchronous Agent</h2>
+              <p>
+                Most of today's work on LLMs focus on <b>synchronous</b> setting, where communication is done in turns. In contrast, much of real-world communication is done <b>asynchronously</b>, where participants need not only to decide <em>what</em> to say, but also <em>when</em> to speak.
+              <p>
+              <p>
+                Despite the prevalence in real-world interaction, to the best of our knowledge, there is no prior work that targets group asynchronous communication in the context of LLMs. Instead, we find that the models developed for social interaction are often modeled as involving predefined turns.
+              <p>
+              <p>
+                In this work, we develop an LLM-based agent for such asyncronous multi-party environments, applicable in a wide range of real-world settings, including group chats, online team meetings, or social games.
+              </p>
+                <video poster="" id="tree" autoplay controls muted loop height="100%">
+          <!-- Your video here -->
+          <source src="static/videos/agent_logic_design_animated_figure.mp4"
+          type="video/mp4">
+        </video>
+              <p>
+                Our agent consists of two LLM-based modules: the <b>scheduler</b>, deciding whether to post a message to the chat at a given moment, and the <b>generator</b>, which composes the message content.
+                They use the environment's setting and metadata as part of the context, and adapt the prompts based on the social state of the conversation.
+                Our agent orchestrates a two-stage call to an LLM.
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!--&lt;!&ndash; Image carousel &ndash;&gt;-->
 <!--<section class="hero is-small">-->
 <!--  <div class="hero-body">-->
@@ -255,7 +289,7 @@
 <!--  </div>-->
 <!--</section>-->
 
-  <section class="section hero is-small">
+  <section class="section hero is-small is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
@@ -277,6 +311,44 @@
               <img src="static/images/game_rules.png" alt="Mafia rules" class="blend-img-background center-image" style="max-width: 85%; height: auto;" />
             </div>
           </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">The LLMafia Dataset</h2>
+              <p>To evaluate our proposed strategy of asynchrony for LLMs, we run games of Mafia with human players, incorporating an agent as an additional player, within an asynchronous chat environment.
+              </p>
+              <p>The <b>LLMafia</b> dataset comprises 21 games and 2558 messages, 211 of which were sent by the LLM-agent. For a detailed overview of the dataset and files and for accessible download, visit the <a href="https://huggingface.co/datasets/niveck/LLMafia" target="_blank">dataset page on HuggingFace</a>.
+              </p>
+              <p>While prior datasets for Mafia exist, ours is the first to integrate an LLM agent, allowing analysis of human-LLM interactions.
+              </p>
+              <img src="static/images/daytime_conversation_example.png" alt="Daytime example conversation">
+              <div class="subtitle has-text-centered">Illustrated example of a real conversation in a game from <em>LLMafia</em>, with highlight comments.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Analysis</h2>
+
+              <p>For full analysis of the dataset, check out <a href="https://arxiv.org/abs/2506.05309" target="_blank">our paper</a>.
+              </p>
 
         </div>
       </div>

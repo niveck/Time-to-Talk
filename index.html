@@ -331,7 +331,7 @@
               </p>
               <p>While prior datasets for Mafia exist, ours is the first to integrate an LLM agent, allowing analysis of human-LLM interactions.
               </p>
-              <img src="static/images/daytime_conversation_example.png" alt="Daytime example conversation">
+              <img src="static/images/daytime_conversation_example.png" alt="Daytime example conversation" class="blend-img-background center-image" style="max-width: 85%; height: auto;" />
               <div class="subtitle has-text-centered">Illustrated example of a real conversation in a game from <em>LLMafia</em>, with highlight comments.</div>
         </div>
       </div>
@@ -344,13 +344,14 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
-        <div class="content">
+        <p class="content">
           <h2 class="title is-3">Analysis</h2>
 
             <p>Analysis of the dataset is described thoroughly in <a href="https://arxiv.org/abs/2506.05309" target="_blank">our paper</a>, with a focus on our LLM agent performance in the game from different perspectives. Our agent aligns with human players in message timing, message quantity, and winning rates, and that human players fail to identify the agent in more than 40% of the cases. However, we also find notable differences in message content, where the agent's messages are longer and can be distinguishable from human players by learned classifiers.
               </p>
             <img src="static/images/mean_time_diff_hists.png" alt="Time difference histograms" class="blend-img-background center-image" style="max-width: 85%; height: auto;" />
-            <div class="subtitle has-text-centered">Distribution of time differences between messages. Each observation in this distribution represents a player in a specific game and the observation's value is the mean time difference (in seconds) between the player's message and a previous message by another player (left) or by the same player (right), averaged across all messages of this player in this game. Blue (red) distributions represent human (LLM) players.</div>
+<!--            <div class="subtitle has-text-centered">Distribution of time differences between messages. Each observation in this distribution represents a player in a specific game and the observation's value is the mean time difference (in seconds) between the player's message and a previous message by another player (left) or by the same player (right), averaged across all messages of this player in this game. Blue (red) distributions represent human (LLM) players.</div>-->
+            <p>Distribution of time differences between messages. Each observation in this distribution represents a player in a specific game and the observation's value is the mean time difference (in seconds) between the player's message and a previous message by another player (left) or by the same player (right), averaged across all messages of this player in this game. Blue (red) distributions represent human (LLM) players.</p>
           <div class="columns">
             <div class="column">
               <img src="static/images/llm_performance_in_game.png" alt="Winning percentages" class="blend-img-background center-image" style="max-width: 85%; height: auto;" />

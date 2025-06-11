@@ -347,9 +347,21 @@
         <div class="content">
           <h2 class="title is-3">Analysis</h2>
 
-              <p>For full analysis of the dataset, check out <a href="https://arxiv.org/abs/2506.05309" target="_blank">our paper</a>.
+            <p>Analysis of the dataset is described thoroughly in <a href="https://arxiv.org/abs/2506.05309" target="_blank">our paper</a>, with a focus on our LLM agent performance in the game from different perspectives. Our agent aligns with human players in message timing, message quantity, and winning rates, and that human players fail to identify the agent in more than 40% of the cases. However, we also find notable differences in message content, where the agent's messages are longer and can be distinguishable from human players by learned classifiers.
               </p>
+            <img src="static/images/mean_time_diff_hists.png" alt="Time difference histograms" class="blend-img-background center-image" style="max-width: 85%; height: auto;" />
+            <div class="subtitle has-text-centered">Distribution of time differences between messages. Each observation in this distribution represents a player in a specific game and the observation's value is the mean time difference (in seconds) between the player's message and a previous message by another player (left) or by the same player (right), averaged across all messages of this player in this game. Blue (red) distributions represent human (LLM) players.</div>
+          <div class="columns">
+            <div class="column">
+              <img src="static/images/llm_performance_in_game.png" alt="Winning percentages" class="blend-img-background center-image" style="max-width: 85%; height: auto;" />
+              Comparison of winning percentage of the LLM agent and human players, divided by role in the game.
+            </div>
 
+            <div class="column">
+              <img src="static/images/classification_table.png" alt="Message embedding separation classification" class="blend-img-background center-image" style="max-width: 85%; height: auto;" />
+              Separation performance by a linear classifier for message embeddings, by different features.
+            </div>
+          </div>
         </div>
       </div>
     </div>

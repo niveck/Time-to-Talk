@@ -148,7 +148,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            LLMs are used predominantly in <em>synchronous</em> communication, where a human user and a model communicate in alternating turns. In contrast, many real-world settings are inherently <em>asynchronous</em>. For example, in group chats, online team meetings, or social games, there is no inherent notion of turns; therefore, the decision of <em>when</em> to speak forms a crucial part of the participant's decision making. In this work, we develop an adaptive asynchronous LLM-agent which, in addition to determining <em>what to say</em>, also decides <em>when to say it</em>. To evaluate our agent, we collect a unique dataset of online Mafia games, including both human participants, as well as our asynchronous agent. Overall, our agent performs on par with human players, both in game performance, as well as in its ability to blend in with the other human players. Our analysis shows that the agent's behavior in deciding when to speak closely mirrors human patterns, although differences emerge in message content. We release all our data and code to support and encourage further research for more realistic asynchronous communication between LLM agents. This work paves the way for integration of LLMs into realistic human group settings, from assistance in team discussions to educational and professional environments where complex social dynamics must be navigated.
+            LLMs are used predominantly in <em>synchronous</em> communication, where a human user and a model communicate in alternating turns. In contrast, many real-world settings are inherently <em>asynchronous</em>. For example, in group chats, online team meetings, or social games, there is no inherent notion of turns; therefore, the decision of <em>when</em> to speak forms a crucial part of the participant's decision making. In this work, we develop an adaptive asynchronous LLM agent which, in addition to determining <em>what to say</em>, also decides <em>when to say it</em>. To evaluate our agent, we collect a unique dataset of online Mafia games, including both human participants, as well as our asynchronous agent. Overall, our agent performs on par with human players, both in game performance, as well as in its ability to blend in with the other human players. Our analysis shows that the agent's behavior in deciding when to speak closely mirrors human patterns, although differences emerge in message content. We release all our data and code to support and encourage further research for more realistic asynchronous communication between LLM agents. This work paves the way for integration of LLMs into realistic human group settings, from assistance in team discussions to educational and professional environments where complex social dynamics must be navigated.
           </p>
         </div>
       </div>
@@ -327,7 +327,7 @@
           <h2 class="title is-3">The LLMafia Dataset</h2>
               <p>To evaluate our proposed strategy of asynchrony for LLMs, we run games of Mafia with human players, incorporating an agent as an additional player, within an asynchronous chat environment.
               </p>
-              <p>The <b>LLMafia</b> dataset comprises 21 games and 2558 messages, 211 of which were sent by the LLM-agent. For a detailed overview of the dataset and files and for accessible download, visit the <a href="https://huggingface.co/datasets/niveck/LLMafia" target="_blank">dataset page on HuggingFace</a>.
+              <p>The <b>LLMafia</b> dataset comprises 33 games and 3593 messages, 275 of which were sent by the LLM agent. For a detailed overview of the dataset and files and for accessible download, visit the <a href="https://huggingface.co/datasets/niveck/LLMafia" target="_blank">dataset page on HuggingFace</a>.
               </p>
               <p>While prior datasets for Mafia exist, ours is the first to integrate an LLM agent, allowing analysis of human-LLM interactions.
               </p><br>
@@ -347,20 +347,20 @@
         <p class="content">
           <h2 class="title is-3">Analysis</h2>
 
-            <p>Analysis of the dataset is described thoroughly in <a href="https://arxiv.org/abs/2506.05309" target="_blank">our paper</a>, with a focus on our LLM agent performance in the game from different perspectives. Our agent aligns with human players in message timing, message quantity, and winning rates, and that human players fail to identify the agent in more than 40% of the cases. However, we also find notable differences in message content, where the agent's messages are longer and can be distinguishable from human players by learned classifiers.
+            <p>Analysis of the dataset is described thoroughly in <a href="https://arxiv.org/abs/2506.05309" target="_blank">our paper</a>, with a focus on our LLM agent performance in the game from different perspectives. Our agent aligns with human players in message timing, message quantity, and winning rates, and human players fail to identify the agent in more than 85% of the cases (when playing with our larger model). However, we also find notable differences in message content, where the agent's messages are longer and can be distinguishable from human players by learned classifiers.
               </p><br><br>
             <img src="static/images/mean_time_diff_hists.png" alt="Time difference histograms" class="blend-img-background center-image" style="max-width: 85%; height: auto;" />
-<!--            <div class="subtitle has-text-centered">Distribution of time differences between messages. Each observation in this distribution represents a player in a specific game and the observation's value is the mean time difference (in seconds) between the player's message and a previous message by another player (left) or by the same player (right), averaged across all messages of this player in this game. Blue (red) distributions represent human (LLM) players.</div>-->
-            <p>Distribution of time differences between messages. Each observation in this distribution represents a player in a specific game and the observation's value is the mean time difference (in seconds) between the player's message and a previous message by another player (left) or by the same player (right), averaged across all messages of this player in this game. Blue (red) distributions represent human (LLM) players.</p><br>
+<!--            <div class="subtitle has-text-centered">Distribution of time differences between messages. Each observation in this distribution represents a player in a specific game and the observation's value is the mean time difference (in seconds) between the player's message and a previous message by another player (left) or by the same player (right), averaged across all messages of this player in this game. Blue, yellow and red distributions represent human, 8B parameter LLM and 70B parameter LLM players, respectively.</div>-->
+            <p>Distribution of time differences between messages. Each observation in this distribution represents a player in a specific game and the observation's value is the mean time difference (in seconds) between the player's message and a previous message by another player (left) or by the same player (right), averaged across all messages of this player in this game. Blue, yellow and red distributions represent human, 8B parameter LLM and 70B parameter LLM players, respectively.</p><br>
           <div class="columns">
             <div class="column">
               <img src="static/images/llm_performance_in_game.png" alt="Winning percentages" class="blend-img-background center-image" style="max-width: 85%; height: auto;" />
-              Comparison of winning percentage of the LLM agent and human players, divided by role in the game.
+              Win percentages of human players compared to the LLM agents (with 8B or 70B parameters), by role in the game.
             </div>
 
             <div class="column">
               <img src="static/images/classification_table.png" alt="Message embedding separation classification" class="blend-img-background center-image" style="max-width: 85%; height: auto;" />
-              Separation performance by a linear classifier for message embeddings, by different features.
+              Separation performance by a linear classifier for message embeddings, by different features. <b>8B F1</b> and <b>70B F1</b> represent the F1 scores for analysis over games played with the 8B parameter LLM and the 70B parameter LLM, respectively.
             </div>
           </div>
         </div>
